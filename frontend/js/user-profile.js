@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     postsCount.textContent = userData.postsCount;
     followersCount.textContent = formatCount(userData.followersCount);
     followingCount.textContent = formatCount(userData.followingCount);
-    document.title = `${userData.username} - Deepsend`;
+    document.title = `${userData.username} - UnderSend`;
     
     // Update follow button
     if (userData.isFollowing) {

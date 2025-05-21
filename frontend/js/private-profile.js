@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     profileName.textContent = userData.name;
     profileBio.textContent = userData.bio;
     profileImage.src = userData.avatar;
-    document.title = `${userData.username} - Deepsend`;
+    document.title = `${userData.username} - UnderSend`;
     
     // Update request button
     if (userData.requestSent) {
