@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Profile - Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-improvements.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Всегда применяем темную тему -->
+  <script>
+    // Всегда применяем темную тему
+    document.documentElement.classList.add("dark-theme");
+  </script>
+  <style>
+    .private-profile-container {
+      background-color: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 30px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .private-icon {
+      font-size: 4rem;
+      color: var(--muted-foreground);
+      margin-bottom: 20px;
+    }
+    
+    .private-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .private-message {
+      color: var(--muted-foreground);
+      margin-bottom: 20px;
+    }
+    
+    .request-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+      margin-bottom: 20px;
+    }
+    
+    .request-btn.pending {
+      background-color: var(--muted);
+      color: var(--muted-foreground);
+      cursor: default;
+    }
+    
+    .private-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      color: var(--muted-foreground);
+    }
+    
+    .private-stat {
+      text-align: center;
+    }
+    
+    .private-stat-value {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--foreground);
+    }
+    
+    .private-stat-label {
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" id="profile-image">
+      </div>
+      <div class="profile-info">
+        <div class="profile-actions">
+          <h1 class="profile-username" id="profile-username">private_user</h1>
+          <div class="profile-buttons">
+            <button class="btn btn-primary request-btn" id="request-btn">Request to Follow</button>
+            <button class="btn btn-icon"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+        </div>
+        
+        <div class="private-stats">
+          <div class="private-stat">
+            <div class="private-stat-value">42</div>
+            <div class="private-stat-label">Posts</div>
+          </div>
+          <div class="private-stat">
+            <div class="private-stat-value">1.2K</div>
+            <div class="private-stat-label">Followers</div>
+          </div>
+          <div class="private-stat">
+            <div class="private-stat-value">567</div>
+            <div class="private-stat-label">Following</div>
+          </div>
+        </div>
+        
+        <div class="profile-bio">
+          <div class="profile-name" id="profile-name">Private User</div>
+          <p id="profile-bio">This account is private</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="private-profile-container">
+      <div class="private-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <h2 class="private-title">This Account is Private</h2>
+      <p class="private-message">Follow this account to see their photos and videos.</p>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/private-profile.js"></script>
+</body>
+</html>

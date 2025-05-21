@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Settings - Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Preload theme to prevent flash -->
+  <script>
+    // Apply theme immediately to prevent flash
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark-theme");
+    }
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <button id="theme-toggle" class="nav-icon"><i class="fas fa-moon"></i></button>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://via.placeholder.com/32" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <a href="settings.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <h1 class="page-title">Theme Settings</h1>
+    </div>
+
+    <section class="settings-section">
+      <div class="settings-card">
+        <div class="settings-header">
+          <h2 class="settings-title">Appearance</h2>
+          <p class="settings-description">Customize how Deepsend looks for you. Changes will only apply to your account.</p>
+        </div>
+        <div class="settings-content">
+          <div class="theme-options">
+            <div class="theme-option" data-theme="light">
+              <div class="theme-option-header">
+                <div class="theme-icon">
+                  <i class="fas fa-sun"></i>
+                </div>
+                <div class="theme-selected">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="theme-preview theme-preview-light">
+                <span>Preview</span>
+              </div>
+              <h3 class="theme-name">Light</h3>
+              <p class="theme-description">Light theme with earthy tones</p>
+            </div>
+            <div class="theme-option" data-theme="dark">
+              <div class="theme-option-header">
+                <div class="theme-icon">
+                  <i class="fas fa-moon"></i>
+                </div>
+                <div class="theme-selected">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="theme-preview theme-preview-dark">
+                <span>Preview</span>
+              </div>
+              <h3 class="theme-name">Dark</h3>
+              <p class="theme-description">Dark theme with earthy tones</p>
+            </div>
+            <div class="theme-option" data-theme="system">
+              <div class="theme-option-header">
+                <div class="theme-icon">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="theme-selected">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="theme-preview theme-preview-system">
+                <span>Preview</span>
+              </div>
+              <h3 class="theme-name">System</h3>
+              <p class="theme-description">Follow your system preferences</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <div class="settings-header">
+          <h2 class="settings-title">Color Palette</h2>
+          <p class="settings-description">The app uses an earthy color palette inspired by nature.</p>
+        </div>
+        <div class="settings-content">
+          <div class="color-palette">
+            <div class="color-item">
+              <div class="color-circle" style="background-color: #2F383A;"></div>
+              <span class="color-name">Outer Space</span>
+              <span class="color-hex">#2F383A</span>
+            </div>
+            <div class="color-item">
+              <div class="color-circle" style="background-color: #798665;"></div>
+              <span class="color-name">Camouflage</span>
+              <span class="color-hex">#798665</span>
+            </div>
+            <div class="color-item">
+              <div class="color-circle" style="background-color: #95A677;"></div>
+              <span class="color-name">Artichoke</span>
+              <span class="color-hex">#95A677</span>
+            </div>
+            <div class="color-item">
+              <div class="color-circle" style="background-color: #B8C394;"></div>
+              <span class="color-name">Sage</span>
+              <span class="color-hex">#B8C394</span>
+            </div>
+            <div class="color-item">
+              <div class="color-circle" style="background-color: #7E9C92;"></div>
+              <span class="color-name">Morning Blue</span>
+              <span class="color-hex">#7E9C92</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://via.placeholder.com/32" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/theme-settings.js"></script>
+  <script src="js/feed.js"></script>
+
+</body>
+</html>

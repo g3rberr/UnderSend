@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Followers & Following - Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-improvements.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Всегда применяем темную тему -->
+  <script>
+    // Всегда применяем темную тему
+    document.documentElement.classList.add("dark-theme");
+  </script>
+  <style>
+    .following-container {
+      background-color: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .following-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .following-tab {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .following-tab.active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    .following-search {
+      padding: 15px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .following-search-icon {
+      position: absolute;
+      left: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted-foreground);
+    }
+    
+    .following-search-input {
+      width: 100%;
+      padding: 10px 10px 10px 35px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background-color: var(--muted);
+      font-size: 0.875rem;
+    }
+    
+    .following-list {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    
+    .following-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .following-item:last-child {
+      border-bottom: none;
+    }
+    
+    .following-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .following-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .following-info {
+      flex: 1;
+    }
+    
+    .following-username {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .following-name {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+    
+    .following-action {
+      margin-left: 10px;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--border);
+      color: var(--foreground);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--muted);
+    }
+    
+    .btn-sm {
+      padding: 5px 12px;
+      font-size: 0.75rem;
+    }
+    
+    .following-empty {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted-foreground);
+    }
+    
+    .following-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <h1 class="page-title" id="following-title">Followers & Following</h1>
+    </div>
+
+    <div class="following-container">
+      <div class="following-tabs">
+        <div class="following-tab active" data-tab="followers">Followers</div>
+        <div class="following-tab" data-tab="following">Following</div>
+      </div>
+      
+      <div class="following-search">
+        <i class="fas fa-search following-search-icon"></i>
+        <input type="search" placeholder="Search" class="following-search-input" id="following-search">
+      </div>
+      
+      <div class="following-list" id="followers-list">
+        <!-- Followers will be loaded here -->
+      </div>
+      
+      <div class="following-list" id="following-list" style="display: none;">
+        <!-- Following will be loaded here -->
+      </div>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/following.js"></script>
+</body>
+</html>

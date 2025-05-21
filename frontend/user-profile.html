@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-improvements.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Всегда применяем темную тему -->
+  <script>
+    // Всегда применяем темную тему
+    document.documentElement.classList.add("dark-theme");
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" id="profile-image">
+      </div>
+      <div class="profile-info">
+        <div class="profile-actions">
+          <h1 class="profile-username" id="profile-username">john_doe</h1>
+          <div class="profile-buttons">
+            <button class="btn btn-primary" id="follow-btn">Follow</button>
+            <button class="btn btn-outline" id="message-btn">Message</button>
+            <button class="btn btn-icon"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+        </div>
+        
+        <div class="profile-stats">
+          <a href="following.html?username=john_doe&tab=followers" class="stat">
+            <div class="stat-value" id="posts-count">42</div>
+            <div>posts</div>
+          </a>
+          <a href="following.html?username=john_doe&tab=followers" class="stat">
+            <div class="stat-value" id="followers-count">1.2K</div>
+            <div>followers</div>
+          </a>
+          <a href="following.html?username=john_doe&tab=following" class="stat">
+            <div class="stat-value" id="following-count">567</div>
+            <div>following</div>
+          </a>
+        </div>
+        
+        <div class="profile-bio">
+          <div class="profile-name" id="profile-name">John Doe</div>
+          <p id="profile-bio">Photographer | Traveler | Coffee Enthusiast</p>
+          <a href="https://johndoe.com" class="profile-website" id="profile-website">johndoe.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="profile-tabs">
+      <div class="tabs">
+        <a href="#posts" class="tab active" data-tab="posts"><i class="fas fa-th"></i> Posts</a>
+        <a href="#reels" class="tab" data-tab="reels"><i class="fas fa-film"></i> Reels</a>
+        <a href="#tagged" class="tab" data-tab="tagged"><i class="fas fa-tag"></i> Tagged</a>
+      </div>
+    </div>
+    
+    <div class="profile-content">
+      <div class="profile-tab-content" id="posts-content">
+        <div class="profile-grid" id="posts-grid">
+          <!-- Posts will be loaded here -->
+        </div>
+      </div>
+      
+      <div class="profile-tab-content" id="reels-content" style="display: none;">
+        <div class="profile-grid" id="reels-grid">
+          <!-- Reels will be loaded here -->
+        </div>
+      </div>
+      
+      <div class="profile-tab-content" id="tagged-content" style="display: none;">
+        <div class="profile-grid" id="tagged-grid">
+          <!-- Tagged posts will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/user-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps and Websites - Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-improvements.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Всегда применяем темную тему -->
+  <script>
+    // Всегда применяем темную тему
+    document.documentElement.classList.add("dark-theme");
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <a href="settings.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <h1 class="page-title">Apps and Websites</h1>
+    </div>
+
+    <div class="apps-container">
+      <div class="settings-card">
+        <div class="settings-header">
+          <div class="settings-icon"><i class="fas fa-plug"></i></div>
+          <div>
+            <h2 class="settings-title">Connected Apps</h2>
+            <p class="settings-description">Manage apps and websites that have access to your Deepsend account</p>
+          </div>
+        </div>
+        <div class="settings-content">
+          <div class="apps-tabs">
+            <button class="app-tab active" data-tab="active">Active</button>
+            <button class="app-tab" data-tab="expired">Expired</button>
+            <button class="app-tab" data-tab="removed">Removed</button>
+          </div>
+          
+          <div class="apps-list" id="active-apps">
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fab fa-spotify"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">Spotify</h3>
+                <p class="app-description">Share your music activity to Deepsend</p>
+                <p class="app-date">Connected on May 15, 2023</p>
+              </div>
+              <button class="btn btn-danger btn-sm">Remove</button>
+            </div>
+            
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">Twitter</h3>
+                <p class="app-description">Share your posts to Twitter</p>
+                <p class="app-date">Connected on April 2, 2023</p>
+              </div>
+              <button class="btn btn-danger btn-sm">Remove</button>
+            </div>
+            
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fas fa-camera"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">PhotoEditor Pro</h3>
+                <p class="app-description">Edit and upload photos to Deepsend</p>
+                <p class="app-date">Connected on March 10, 2023</p>
+              </div>
+              <button class="btn btn-danger btn-sm">Remove</button>
+            </div>
+          </div>
+          
+          <div class="apps-list" id="expired-apps" style="display: none;">
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fab fa-facebook"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">Facebook</h3>
+                <p class="app-description">Share your posts to Facebook</p>
+                <p class="app-date">Expired on January 15, 2023</p>
+              </div>
+              <button class="btn btn-primary btn-sm">Reconnect</button>
+            </div>
+          </div>
+          
+          <div class="apps-list" id="removed-apps" style="display: none;">
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fab fa-pinterest"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">Pinterest</h3>
+                <p class="app-description">Share your posts to Pinterest</p>
+                <p class="app-date">Removed on February 5, 2023</p>
+              </div>
+              <button class="btn btn-primary btn-sm">Reconnect</button>
+            </div>
+            
+            <div class="app-item">
+              <div class="app-icon">
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+              <div class="app-info">
+                <h3 class="app-name">ShopConnect</h3>
+                <p class="app-description">Connect your shop to Deepsend</p>
+                <p class="app-date">Removed on December 20, 2022</p>
+              </div>
+              <button class="btn btn-primary btn-sm">Reconnect</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="settings-card">
+        <div class="settings-header">
+          <div class="settings-icon"><i class="fas fa-plus-circle"></i></div>
+          <div>
+            <h2 class="settings-title">Add New App</h2>
+            <p class="settings-description">Connect a new app or website to your Deepsend account</p>
+          </div>
+        </div>
+        <div class="settings-content">
+          <div class="app-categories">
+            <div class="app-category">
+              <div class="app-category-icon">
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <h3 class="app-category-title">Social Media</h3>
+              <p class="app-category-description">Connect to other social platforms</p>
+              <button class="btn btn-primary btn-sm">Browse Apps</button>
+            </div>
+            
+            <div class="app-category">
+              <div class="app-category-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h3 class="app-category-title">Shopping</h3>
+              <p class="app-category-description">Connect to e-commerce platforms</p>
+              <button class="btn btn-primary btn-sm">Browse Apps</button>
+            </div>
+            
+            <div class="app-category">
+              <div class="app-category-icon">
+                <i class="fas fa-music"></i>
+              </div>
+              <h3 class="app-category-title">Entertainment</h3>
+              <p class="app-category-description">Connect to music and video services</p>
+              <button class="btn btn-primary btn-sm">Browse Apps</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/apps.js"></script>
+</body>
+</html>

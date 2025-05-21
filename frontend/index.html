@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepsend</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Preload theme to prevent flash -->
+  <script>
+    document.documentElement.classList.add("dark-theme");
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Deepsend</a>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" placeholder="Search" class="search-input">
+      </div>
+      <nav class="nav-icons">
+        <a href="index.html" class="nav-icon active"><i class="fas fa-home"></i></a>
+        <a href="explore.html" class="nav-icon"><i class="fas fa-compass"></i></a>
+        <a href="create.html" class="nav-icon"><i class="fas fa-plus-square"></i></a>
+        <a href="messages.html" class="nav-icon"><i class="fas fa-comment"></i></a>
+        <a href="liked.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+        <button id="theme-toggle" class="nav-icon"><i class="fas fa-moon"></i></button>
+        <a href="profile.html" class="profile-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Stories -->
+    <section class="stories-container">
+      <div class="stories">
+        <div class="story story-create">
+          <div class="story-avatar">
+            <i class="fas fa-plus"></i>
+          </div>
+          <span>Your Story</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar has-story">
+            <img src="https://via.placeholder.com/60" alt="User">
+          </div>
+          <span>travel_enthusiast</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar has-story">
+            <img src="https://via.placeholder.com/60" alt="User">
+          </div>
+          <span>photo_master</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar">
+            <img src="https://via.placeholder.com/60" alt="User">
+          </div>
+          <span>food_lover</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar has-story">
+            <img src="https://via.placeholder.com/60" alt="User">
+          </div>
+          <span>nature_lover</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar">
+            <img src="https://via.placeholder.com/60" alt="User">
+          </div>
+          <span>urban_artist</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feed -->
+    <section class="feed" id="feed-container">
+      <article class="post"><div class="post-header">
+      <div class="post-user">
+        <a href="profile.html?username=john_doe" class="post-avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="john_doe" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'">
+        </a>
+        <div>
+          <a href="profile.html?username=john_doe" class="post-username">john_doe</a>
+          <span class="post-location">New York</span>
+        </div>
+      </div>
+      <button class="post-more"><i class="fas fa-ellipsis-h"></i></button>
+    </div><div class="post-image"><a href="post-detail.html?id=1"><img src="https://placehold.co/400" alt="Post content" onerror="this.src='https://placehold.co/400'"></a></div><div class="post-actions">
+      <div class="post-actions-left">
+        <button class="post-action " data-post-id="1" data-action="like">
+          <i class="far fa-heart"></i>
+        </button>
+        <button class="post-action" data-post-id="1" data-action="comment">
+          <i class="far fa-comment"></i>
+        </button>
+        <button class="post-action" data-post-id="1" data-action="share">
+          <i class="far fa-paper-plane"></i>
+        </button>
+      </div>
+      <button class="post-action " data-post-id="1" data-action="save">
+        <i class="far fa-bookmark"></i>
+      </button>
+    </div><div class="post-likes">150 likes</div><div class="post-caption">
+      <a href="profile.html?username=john_doe" class="post-username">john_doe</a>
+      <span>Enjoying the city views!</span>
+    </div><div class="post-comments-preview"><button class="view-comments" data-post-id="1">View all 2 comments</button>
+          <div class="post-comment">
+            <a href="profile.html?username=jane_doe" class="post-username">jane_doe</a>
+            <span>Awesome shot!</span>
+          </div>
+        </div><div class="post-time">2 hours ago</div><div class="post-add-comment">
+      <input type="text" placeholder="Add a comment...">
+      <button>Post</button>
+    </div></article><article class="post"><div class="post-header">
+      <div class="post-user">
+        <a href="profile.html?username=jane_doe" class="post-avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="jane_doe" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'">
+        </a>
+        <div>
+          <a href="profile.html?username=jane_doe" class="post-username">jane_doe</a>
+          <span class="post-location">Paris</span>
+        </div>
+      </div>
+      <button class="post-more"><i class="fas fa-ellipsis-h"></i></button>
+    </div><div class="post-image"><a href="post-detail.html?id=2"><img src="https://placehold.co/400" alt="Post content" onerror="this.src='https://placehold.co/400'"></a></div><div class="post-actions">
+      <div class="post-actions-left">
+        <button class="post-action liked" data-post-id="2" data-action="like">
+          <i class="fas fa-heart"></i>
+        </button>
+        <button class="post-action" data-post-id="2" data-action="comment">
+          <i class="far fa-comment"></i>
+        </button>
+        <button class="post-action" data-post-id="2" data-action="share">
+          <i class="far fa-paper-plane"></i>
+        </button>
+      </div>
+      <button class="post-action liked" data-post-id="2" data-action="save">
+        <i class="fas fa-bookmark"></i>
+      </button>
+    </div><div class="post-likes">200 likes</div><div class="post-caption">
+      <a href="profile.html?username=jane_doe" class="post-username">jane_doe</a>
+      <span>Bonjour from Paris!</span>
+    </div><div class="post-comments-preview">
+          <div class="post-comment">
+            <a href="profile.html?username=john_doe" class="post-username">john_doe</a>
+            <span>Beautiful!</span>
+          </div>
+        </div><div class="post-time">1 day ago</div><div class="post-add-comment">
+      <input type="text" placeholder="Add a comment...">
+      <button>Post</button>
+    </div></article><article class="post"><div class="post-header">
+      <div class="post-user">
+        <a href="profile.html?username=john_doe" class="post-avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="john_doe" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'">
+        </a>
+        <div>
+          <a href="profile.html?username=john_doe" class="post-username">john_doe</a>
+          <span class="post-location">Tokyo</span>
+        </div>
+      </div>
+      <button class="post-more"><i class="fas fa-ellipsis-h"></i></button>
+    </div><div class="post-image"><a href="post-detail.html?id=3"><img src="https://placehold.co/400" alt="Post content" onerror="this.src='https://placehold.co/400'"></a></div><div class="post-actions">
+      <div class="post-actions-left">
+        <button class="post-action " data-post-id="3" data-action="like">
+          <i class="far fa-heart"></i>
+        </button>
+        <button class="post-action" data-post-id="3" data-action="comment">
+          <i class="far fa-comment"></i>
+        </button>
+        <button class="post-action" data-post-id="3" data-action="share">
+          <i class="far fa-paper-plane"></i>
+        </button>
+      </div>
+      <button class="post-action liked" data-post-id="3" data-action="save">
+        <i class="fas fa-bookmark"></i>
+      </button>
+    </div><div class="post-likes">300 likes</div><div class="post-caption">
+      <a href="profile.html?username=john_doe" class="post-username">john_doe</a>
+      <span>Amazing architecture in Tokyo!</span>
+    </div><div class="post-comments-preview"></div><div class="post-time">3 days ago</div><div class="post-add-comment">
+      <input type="text" placeholder="Add a comment...">
+      <button>Post</button>
+    </div></article>
+    </section>
+  </main>
+
+  <!-- Comments Modal -->
+  <div id="comments-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Comments</h2>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="comments-container">
+        <!-- Comments will be loaded dynamically -->
+      </div>
+      <div class="modal-footer">
+        <div class="comment-input-container">
+          <input type="text" id="comment-input" placeholder="Add a comment...">
+          <button id="post-comment-btn">Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-icon active"><i class="fas fa-home"></i></a>
+    <a href="explore.html" class="mobile-nav-icon"><i class="fas fa-compass"></i></a>
+    <a href="create.html" class="mobile-nav-icon"><i class="fas fa-plus-square"></i></a>
+    <a href="messages.html" class="mobile-nav-icon"><i class="fas fa-comment"></i></a>
+    <a href="profile.html" class="mobile-nav-icon">
+      <img src="https://via.placeholder.com/32" alt="Profile" class="mobile-profile-icon">
+    </a>
+  </nav>
+
+  <script src="js/theme.js"></script>
+  <script src="js/feed.js"></script>
+</body>
+</html>
