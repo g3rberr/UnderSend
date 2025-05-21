@@ -6,7 +6,7 @@ class ActiveUserMiddleware:
 
     def __call__(self, request):
         if request.user.is_authenticated:
-            if not self.hide_active:
+            if not request.user.hide_active:
                 now = timezone.now()
                 last_active = request.user.last_active
 
