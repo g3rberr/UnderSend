@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
 
-class UndersendUser(AbstractUser):
+class UnderSendUser(AbstractUser):
     profile_image = models.ImageField(upload_to='pfps/', default='defaults/default_pfp.png')
     bio = models.TextField(max_length=256, blank=True, null=True)
     website = models.CharField(max_length=64, blank=True, null=True)
